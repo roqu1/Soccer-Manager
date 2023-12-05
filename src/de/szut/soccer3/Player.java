@@ -1,37 +1,20 @@
 package de.szut.soccer3;
 
-public class Player {
-    private String name;
-    private int age;
+public class Player extends Person {
+
     private int strength;
     private int powerAtGoalKick;
     private int motivation;
     private int numberOfGoals;
 
     public Player(String name, int age, int strength, int powerAtGoalKick, int motivation, int numberOfGoals) {
-        this.name = name;
-        this.age = age;
+        super(name, age);
         this.strength = strength;
         this.powerAtGoalKick = powerAtGoalKick;
         this.motivation = motivation;
         this.numberOfGoals = numberOfGoals;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
 
     public int getStrength() {
         return strength;
@@ -88,8 +71,8 @@ public class Player {
     @Override
     public String toString() {
         return "Player{" +
-                "name='" + name + '\'' +
-                ", age=" + age +
+                "name='" + this.getName() + '\'' +
+                ", age=" + this.getAge() +
                 ", strength=" + strength +
                 ", powerAtGoalKick=" + powerAtGoalKick +
                 ", motivation=" + motivation +

@@ -1,8 +1,7 @@
 package de.szut.soccer3;
 
 public class Coach extends Person {
-    private String name;
-    private int age;
+
     private int experience;
     public Coach(String name, int age, int experience) {
         super(name, age);
@@ -30,8 +29,8 @@ public class Coach extends Person {
     @Override
     public String toString() {
         return "Coach{" +
-                "name='" + name + '\'' +
-                ", age=" + age +
+                "name='" + this.getName() + '\'' +
+                ", age=" + this.getAge() +
                 ", experience=" + experience +
                 '}';
     }
