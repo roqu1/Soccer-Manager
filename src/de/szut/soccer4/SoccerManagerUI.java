@@ -35,6 +35,14 @@ public class SoccerManagerUI {
         System.out.println(dortmund.toString());
 
         Game game = new Game(bayern, dortmund);
+        System.out.println('\n'+"Spielstand: "+ game.getScore());
+        game.increaseHomeGoals();
+        game.increaseHomeGoals();
+        System.out.println('\n'+"Spielstand: "+ game.getScore());
+        game.increaseAwayGoals();
+
+
+
 
         System.out.println("Mannschaft: Bayern");
         System.out.println("Mannschaftsstärke: " + bayern.getTotalForce());
