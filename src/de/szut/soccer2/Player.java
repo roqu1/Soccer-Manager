@@ -75,6 +75,14 @@ public class Player {
         this.numberOfGoals++;
     }
 
+    public boolean ballHold(int powerAtGoalKick) {
+        int result = validate(getStrength()-(int) (Math.random() * 3 - 2));
+        if (result > powerAtGoalKick) {
+            return true;
+        }
+        return false;
+    }
+
     public int validate(int value) {
         if (value > 10) {
             return 10;

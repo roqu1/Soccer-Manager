@@ -54,6 +54,14 @@ public class Player extends Person {
         return validate(result);
     }
 
+    public boolean ballHold(int powerAtGoalKick) {
+        int result = validate(getStrength()-(int) (Math.random() * 3 - 2));
+        if (result > powerAtGoalKick) {
+            return true;
+        }
+        return false;
+    }
+
     public void addGoal() {
         this.numberOfGoals++;
     }

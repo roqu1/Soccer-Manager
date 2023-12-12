@@ -1,37 +1,20 @@
-package de.szut.soccer1;
+package de.szut.soccer4;
 
-public class Player {
-    private String name;
-    private int age;
+public class Player extends Person {
+
     private int strength;
     private int powerAtGoalKick;
     private int motivation;
     private int numberOfGoals;
 
     public Player(String name, int age, int strength, int powerAtGoalKick, int motivation, int numberOfGoals) {
-        this.name = name;
-        this.age = age;
+        super(name, age);
         this.strength = strength;
         this.powerAtGoalKick = powerAtGoalKick;
         this.motivation = motivation;
         this.numberOfGoals = numberOfGoals;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
 
     public int getStrength() {
         return strength;
@@ -71,16 +54,16 @@ public class Player {
         return validate(result);
     }
 
-    public void addGoal() {
-        this.numberOfGoals++;
-    }
-
     public boolean ballHold(int powerAtGoalKick) {
         int result = validate(getStrength()-(int) (Math.random() * 3 - 2));
         if (result > powerAtGoalKick) {
             return true;
         }
         return false;
+    }
+
+    public void addGoal() {
+        this.numberOfGoals++;
     }
 
     public int validate(int value) {
@@ -95,9 +78,9 @@ public class Player {
 
     @Override
     public String toString() {
-        return "Player{" +
-                "name='" + name + '\'' +
-                ", age=" + age +
+        return "\n"+"Player{" +
+                "name='" + this.getName() + '\'' +
+                ", age=" + this.getAge() +
                 ", strength=" + strength +
                 ", powerAtGoalKick=" + powerAtGoalKick +
                 ", motivation=" + motivation +
